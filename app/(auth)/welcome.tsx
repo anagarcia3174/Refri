@@ -20,16 +20,12 @@ const Onboarding = () => {
     };
 
     return (
-        <SafeAreaView className="flex-1 bg-light-background dark:bg-dark-background">
-            <View className="flex-row justify-end p-5">
-                    <TouchableOpacity onPress={() => router.replace("/(auth)/sign-up")}>
+        <SafeAreaView className="flex h-full items-center justify-between bg-light-background dark:bg-dark-background">
+                    <TouchableOpacity className="w-full flex justify-end items-end p-5" onPress={() => router.replace("/(auth)/sign-up")}>
                         <Text className="text-light-text-muted dark:text-dark-text-muted font-bold">Skip</Text>
                     </TouchableOpacity>
-            </View>
 
-            <View className="items-center">
                 <Text className="font-PoppinsExtraBold text-6xl leading-tight text-light-text-primary dark:text-dark-text-primary">REFRI</Text>
-            </View>
 
             <Swiper
                 ref={swiperRef}
@@ -39,17 +35,26 @@ const Onboarding = () => {
                 onIndexChanged={setActiveIndex}
             >
                 {onboarding.map((item, index) => (
-                    <View key={item.id} className="flex-1 items-center justify-center px-5">
+                    <View key={item.id} className="flex items-center justify-center p-5">
                         <Image source={item.image} className="w-full h-[300px]" resizeMode="contain" />
-                        <Text className=" text-3xl font-PoppinsBold text-center mt-10 text-light-text-primary dark:text-dark-text-primary">{item.title}</Text>
-                        <Text className="text-lg font-PoppinsSemiBold text-center mx-2 mt-2 ttext-dark-text-muted dark:text-dark-text-muted">{item.description}</Text>
+                        <View className="flex flex-row items-center justify-center w-full mt-10">
+                            <Text className="text-3xl font-PoppinsExtraBold font-bold mx-10 text-center text-light-text-primary dark:text-dark-text-primary">{item.title}</Text>
+                        </View>
+                        <Text className="text-lg font-PoppinsSemiBold text-center mx-2 mt-2 text-light-text-muted dark:text-dark-text-muted">{item.description}</Text>
                     </View>
                 ))}
             </Swiper>
-            <View className="items-center mx-3">
-                <CustomButton onPress={() => {isLastSlide ? router.replace('/(auth)/sign-up') : swiperRef.current?.scrollBy(1)}} title={isLastSlide ? "Get Started" : "Next"} bgVariant="primary" textVariant="primary" className="w-11/12 mb-10"/>
-            </View>
-
+                <CustomButton
+                    title={isLastSlide ? "Get Started" : "Next"}
+                    onPress={() =>
+                        isLastSlide
+                            ? router.replace("/(auth)/sign-up")
+                            : swiperRef.current?.scrollBy(1)
+                    }
+                    bgVariant="primary"
+                    textVariant="primary"
+                    className="w-10/12 mt-5 mb-10"
+                />
         </SafeAreaView>
     );
 };
