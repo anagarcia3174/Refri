@@ -53,7 +53,7 @@ const Onboarding = () => {
                     }
                     bgVariant="primary"
                     textVariant="primary"
-                    className="w-10/12 mt-5 mb-10"
+                    className="w-11/12 mt-5 mb-10"
                 />
         </SafeAreaView>
     );
