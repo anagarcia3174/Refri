@@ -3,7 +3,7 @@ import {SafeAreaView} from "react-native-safe-area-context";
 
 const Search = () => {
     return (
-        <SafeAreaView >
+        <SafeAreaView className="flex-1 bg-light-background dark:bg-dark-background">
 
         </SafeAreaView>
     );

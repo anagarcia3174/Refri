@@ -3,9 +3,9 @@ import './globals.css';
 import {useFonts} from "expo-font";
 import {useEffect} from "react";
 import * as SplashScreen from 'expo-splash-screen';
+import { AuthProvider } from "./lib/context/authContext";
 
 SplashScreen.preventAutoHideAsync();
-
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -28,9 +28,13 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Stack>
-    <Stack.Screen name="index" options={{headerShown: false}}></Stack.Screen>
-    <Stack.Screen name="(root)" options={{headerShown: false}}></Stack.Screen>
-    <Stack.Screen name="(auth)" options={{headerShown: false}}></Stack.Screen>
-  </Stack>;
+  return (
+    <AuthProvider>
+      <Stack>
+        <Stack.Screen name="index" options={{headerShown: false}} />
+        <Stack.Screen name="(root)" options={{headerShown: false}} />
+        <Stack.Screen name="(auth)" options={{headerShown: false}} />
+      </Stack>
+    </AuthProvider>
+  );
 }

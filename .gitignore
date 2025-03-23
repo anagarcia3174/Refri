@@ -30,9 +30,18 @@ yarn-error.*
 *.pem
 
 # local env files
-.env*.local
+.env
+.env.local
+.env.*.local
 
 # typescript
 *.tsbuildinfo
 
 app-example
+
+ios/
+android/
+
+# Firebase config files
+google-services.json
+GoogleService-Info.plist

@@ -5,6 +5,7 @@ import {useState} from "react";
 const InputField = ({
     label,
     icon,
+    rightIcon,
     secureTextEntry = false,
     labelStyle,
     containerStyle,
@@ -28,6 +29,7 @@ const InputField = ({
                             onBlur={() => setIsFocused(false)}
                             secureTextEntry={secureTextEntry}
                             className={`rounded-full  font-PoppinsSemiBold text-[15px] flex-1 ${inputStyle} text-left`} {...props}/>
+                        {rightIcon}
                     </View>
                 </View>
             </TouchableWithoutFeedback>

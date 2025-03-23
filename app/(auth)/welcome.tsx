@@ -5,6 +5,7 @@ import Swiper from "react-native-swiper";
 import { useRef, useState } from "react";
 import { onboarding } from "@/constants";
 import CustomButton from "@/components/CustomButton";
+import Animated, { FadeIn, FadeInDown, FadeInUp } from "react-native-reanimated";
 
 const Onboarding = () => {
     const swiperRef = useRef<Swiper>(null);
@@ -21,40 +22,71 @@ const Onboarding = () => {
 
     return (
         <SafeAreaView className="flex h-full items-center justify-between bg-light-background dark:bg-dark-background">
-                    <TouchableOpacity className="w-full flex justify-end items-end p-5" onPress={() => router.replace("/(auth)/sign-up")}>
-                        <Text className="text-light-text-muted dark:text-dark-text-muted font-bold">Skip</Text>
-                    </TouchableOpacity>
+            <Animated.View 
+                entering={FadeIn.delay(200)} 
+                className="w-full flex justify-end items-end p-5"
+            >
+                <TouchableOpacity onPress={() => router.replace("/(auth)/sign-up")}>
+                    <Text className="text-light-text-muted dark:text-dark-text-muted font-PoppinsMedium">Skip</Text>
+                </TouchableOpacity>
+            </Animated.View>
 
-                <Text className="font-PoppinsExtraBold text-6xl leading-tight text-light-text-primary dark:text-dark-text-primary">REFRI</Text>
+            <Animated.Text 
+                entering={FadeInDown.duration(800).springify()} 
+                className="font-PoppinsExtraBold text-7xl leading-tight text-light-primary dark:text-dark-primary tracking-wider"
+            >
+                REFRI
+            </Animated.Text>
 
             <Swiper
                 ref={swiperRef}
                 loop={false}
                 showsButtons={false}
-                showsPagination={false}
+                dotStyle={{
+                    backgroundColor: 'rgba(0,0,0,.2)',
+                    width: 8,
+                    height: 8,
+                    borderRadius: 4,
+                    marginLeft: 3,
+                    marginRight: 3,
+                }}
+                activeDotStyle={{
+                    backgroundColor: '#2A9D8F',
+                    width: 20,
+                    height: 8,
+                    borderRadius: 4,
+                    marginLeft: 3,
+                    marginRight: 3,
+                }}
                 onIndexChanged={setActiveIndex}
             >
                 {onboarding.map((item, index) => (
-                    <View key={item.id} className="flex items-center justify-center p-5">
+                    <Animated.View 
+                        entering={FadeInUp.delay(400).duration(1000)} 
+                        key={item.id} 
+                        className="flex items-center justify-center p-5"
+                    >
                         <Image source={item.image} className="w-full h-[300px]" resizeMode="contain" />
                         <View className="flex flex-row items-center justify-center w-full mt-10">
-                            <Text className="text-3xl font-PoppinsExtraBold font-bold mx-10 text-center text-light-text-primary dark:text-dark-text-primary">{item.title}</Text>
+                            <Text className="text-3xl font-PoppinsExtraBold mx-10 text-center text-light-text-primary dark:text-dark-text-primary">{item.title}</Text>
                         </View>
-                        <Text className="text-lg font-PoppinsSemiBold text-center mx-2 mt-2 text-light-text-muted dark:text-dark-text-muted">{item.description}</Text>
-                    </View>
+                        <Text className="text-lg font-PoppinsMedium text-center mx-2 mt-2 text-light-text-muted dark:text-dark-text-muted">{item.description}</Text>
+                    </Animated.View>
                 ))}
             </Swiper>
+
+            <Animated.View 
+                entering={FadeInUp.delay(600)} 
+                className="w-full px-5 mb-10"
+            >
                 <CustomButton
                     title={isLastSlide ? "Get Started" : "Next"}
-                    onPress={() =>
-                        isLastSlide
-                            ? router.replace("/(auth)/sign-up")
-                            : swiperRef.current?.scrollBy(1)
-                    }
+                    onPress={handleNext}
                     bgVariant="primary"
                     textVariant="primary"
-                    className="w-11/12 mt-5 mb-10"
+                    className="w-full shadow-sm"
                 />
+            </Animated.View>
         </SafeAreaView>
     );
 };

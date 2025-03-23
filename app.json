@@ -10,6 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist",
       "bundleIdentifier": "com.anagarcia.refri",
       "icon": {
         "dark": "./assets/images/icondark.png",
@@ -23,6 +24,8 @@
     },
     "plugins": [
       "expo-router",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
       [
         "expo-splash-screen",
         {
@@ -35,13 +38,22 @@
           },
           "imageWidth": 100
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
     },
     "android": {
-      "package": "com.anagarcia.refri"
+      "package": "com.anagarcia.refri",
+      "googleServicesFile": "./google-services.json"
     }
   }
 }

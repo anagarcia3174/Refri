@@ -17,26 +17,26 @@ module.exports = {
       colors: {
         // Light mode colors
         light: {
-          background: '#FEF9F2', // Creamy background
-          primary: '#4D9E6F',    // Fresh green
-          secondary: '#FF9047',  // Vibrant orange
-          accent: '#8ECAE6',     // Soft blue
+          background: '#FDF8F3', // Warmer creamy background
+          primary: '#2A9D8F',    // Teal-green (more modern)
+          secondary: '#F4A261',  // Soft coral
+          accent: '#98C1D9',     // Muted blue-gray
           text: {
-            primary: '#2D3B36',   // Dark green-gray
-            secondary: '#5C6761', // Medium green-gray
-            muted: '#8A9490'      // Light green-gray
+            primary: '#264653',   // Deep blue-gray
+            secondary: '#546E7A', // Medium blue-gray
+            muted: '#90A4AE'      // Light blue-gray
           }
         },
         // Dark mode colors
         dark: {
-          background: '#1E2826', // Deep green-gray
-          primary: '#5ABE85',    // Bright green
-          secondary: '#FF9F5C',  // Warm orange
-          accent: '#5DADCF',     // Muted blue
+          background: '#1D2D35', // Deep blue-gray
+          primary: '#2A9D8F',    // Matching teal-green
+          secondary: '#E76F51',  // Burnt orange
+          accent: '#7FB7CA',     // Muted teal
           text: {
-            primary: '#F7F7F2',   // Off-white
-            secondary: '#C7CAC8', // Light gray
-            muted: '#919996'      // Medium gray
+            primary: '#F5F5F5',   // Crisp white
+            secondary: '#CFD8DC', // Cool gray
+            muted: '#90A4AE'      // Medium gray
           }
         }
       },

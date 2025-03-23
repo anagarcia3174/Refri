@@ -1,50 +1,79 @@
-# Welcome to your Expo app 👋
+# Refri - Your Smart Kitchen & Recipe Companion 🥗
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Refri is a cross-platform mobile application that helps health-conscious individuals manage their kitchen inventory, discover macro-friendly recipes, and connect with like-minded people in a social media environment.
 
-## Get started
+## 🎯 Features
 
-1. Install dependencies
+- **📱 User Profiles**
+  - Create and customize your profile
+  - Set and track macro goals
+  - Follow other users and build your network
+  - Privacy settings for profile visibility
 
-   ```bash
-   npm install
-   ```
+- **🍳 Recipe Management**
+  - Create and share your recipes with photos
+  - Automatic macro calculation
+  - Smart tagging system
+  - Save favorite recipes
 
-2. Start the app
+- **🏪 Kitchen Inventory**
+  - Track your ingredients
+  - Expiration date notifications
+  - Smart inventory management
 
-   ```bash
-    npx expo start
-   ```
+- **📱 Social Features**
+  - Personalized recipe feed
+  - Like and comment on recipes
+  - Share recipes externally
+  - Follow your favorite creators
 
-In the output, you'll find options to open the app in a
+## 🛠️ Built With
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* [![React Native](https://img.shields.io/badge/React%20Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+* [![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+* [![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+* [![FatSecret API](https://img.shields.io/badge/FatSecret%20API-4CAF50?style=for-the-badge&logo=leaflet&logoColor=white)](https://platform.fatsecret.com/)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📱 Development Status
 
-## Get a fresh project
+Currently in active development with the following phases:
 
-When you're ready, run:
+### Phase 1 (Current) - MVP
+- ✅ User authentication
+- 🟨 Basic profile management
+- 🏗️ Recipe creation and sharing
+- 🏗️ Kitchen inventory system
+- 🏗️ Basic feed functionality
 
-```bash
-npm run reset-project
-```
+### Phase 2 - Social Features
+- 🎯 Enhanced social interactions
+- 🎯 Comments and likes
+- 🎯 Advanced recipe search
+- 🎯 Ingredient discovery
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Phase 3 - Premium Features
+- 📋 Barcode scanning
+- 📋 Receipt scanning
+- 📋 Advanced macro tracking
+- 📋 Premium subscriptions
 
-## Learn more
+## 📞 Contact & Support
 
-To learn more about developing your project with Expo, look at the following resources:
+For business inquiries or support:  
+📧 Contact: anagarcia3174@gmail.com
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📄 License
 
-## Join the community
+Copyright © 2024 Ana Garcia. All Rights Reserved.
 
-Join our community of developers creating universal apps.
+This project and its contents are protected under copyright law. No part of this project may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright owner.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🙏 Acknowledgments
+
+- [Expo Team](https://expo.dev/) for the amazing development platform
+- [Firebase](https://firebase.google.com/) for backend infrastructure
+- [FatSecret](https://platform.fatsecret.com/) for nutritional data API
+
+---
+
+<p align="center">Made with ❤️ for health-conscious foodies</p>
